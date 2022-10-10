@@ -1,0 +1,10 @@
+h5py==2.10.0
+keras==2.10.0
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.2
+nltk==3.7
+numpy==1.23.3
+protobuf==3.19.6
+tensorboard==2.10.1
+tensorflow==2.10.0
+tensorflow-estimator==2.10.0

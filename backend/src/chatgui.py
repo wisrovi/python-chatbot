@@ -1,13 +1,25 @@
 import nltk, json, random, pickle
 from nltk.stem import WordNetLemmatizer
+
+
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
+
 lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
 from tensorflow.keras.models import load_model
-model = load_model('chatbot_model.h5')
-intents = json.loads(open('intents.json').read())
-words = pickle.load(open('words.pkl','rb'))
-classes = pickle.load(open('classes.pkl','rb'))
+
+classes = words = intents = model = None
+def leer_data():
+    global classes, words, intents, model
+
+    model = load_model('/model/chatbot_model.h5')
+    intents = json.loads(open('/data_train/intents.json').read())
+    words = pickle.load(open('/model/words.pkl','rb'))
+    classes = pickle.load(open('/model/classes.pkl','rb'))
 
 # preprocessamento input utente
 def clean_up_sentence(sentence):
@@ -48,15 +60,19 @@ def getRisposta(ints, intents_json):
             break
     return result
 
-def inizia(msg):
+def inizia(msg, charge=False):
+    if charge:
+        leer_data()
     ints = calcola_pred(msg, model)
     res = getRisposta(ints, intents)
     return res
 
-utente = ''
+utente = 'hello'
+res = inizia(utente, charge=True)
 print('Benvenuto! Per uscire, scrivi "Esci"')
 
-while utente != 'esci':
-    utente = str(input(""))
-    res = inizia(utente)
-    print('AI:' + res)
+if __name__ == "__main__":
+    while utente != 'esci':
+        utente = str(input(""))
+        res = inizia(utente)
+        print('AI:' + res)

@@ -1,6 +1,14 @@
+from genericpath import isfile
+import os, sys
+if os.path.exists("/data_train/ok.txt"):
+    print("No se requiere entrenar el modelo")
+    sys.exit()
+
+
 import nltk
 nltk.download('punkt')
 nltk.download('wordnet')
+nltk.download('omw-1.4')
 from nltk.stem import WordNetLemmatizer
 
 import json
@@ -8,7 +16,7 @@ import pickle
 
 import numpy as np
 from tensorflow.keras import Sequential
-from tensorflow.keras.layers import Conv2D, Flatten, Dense, Dropout
+from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import SGD
 
 lemmatizer = WordNetLemmatizer()
@@ -16,8 +24,9 @@ words = []
 classes = []
 documents = []
 ignore_words = ['?', '!']
-data_file = open('intents.json').read()
-intents = json.loads(data_file)
+
+with open('/data_train/intents.json') as file:
+    intents = json.load(file)
 print(intents)
 
 # intents: gruppi di conversazioni-tipo
@@ -37,8 +46,8 @@ for intent in intents['intents']:
 
 words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]
 
-pickle.dump(words, open('words.pkl','wb'))
-pickle.dump(classes, open('classes.pkl','wb'))
+pickle.dump(words, open('model/words.pkl','wb'))
+pickle.dump(classes, open('model/classes.pkl','wb'))
 
 # preparazione per l'addestramento della rete
 training = []
@@ -77,6 +86,9 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy
 
 #fitting and saving the model
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=300, batch_size=5, verbose=1)
-model.save('chatbot_model.h5', hist)
+model.save('model/chatbot_model.h5', hist)
 
 print("model created")
+
+with open("/data_train/ok.txt", "w") as f:
+    f.write("ok")

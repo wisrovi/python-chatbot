@@ -1,0 +1,32 @@
+version: "3"
+services:
+  training:
+    build: ./train_model
+    volumes:
+      - ./train_model/model:/code/model
+      - ./train_model/data_train:/data_train
+    command: python train_bot.py
+
+  backend:
+    build: ./backend
+    volumes:
+      - ./train_model/model:/model
+      - ./train_model/data_train:/data_train
+      - ./backend/src:/code
+    command: python api.py
+    ports:
+      - "8000:8000"
+    depends_on:
+      - training
+
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend/src:/code
+    environment:
+      - SO=docker
+    ports:
+      - "8888:8888"
+    depends_on:
+      - backend
+    command: python app.py
