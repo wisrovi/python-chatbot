@@ -13,8 +13,9 @@ def mensaje_nocomando(update, context):
     question_user = update.message.text # obtengo el mensaje del usuario
     
     old_log = getLog(cid) # miro si hay un log previo cargado en cache, sino creo el cache para este usuario        
-    old_log = f"Person: {question_user} \n" if old_log is None else old_log # si no hay log previo, lo inicializo en vacio
-    
+    old_log = "" if old_log is None else old_log  # si no hay log previo, lo inicializo en vacio
+    old_log += f"Person: {question_user} \n" # agrego el mensaje del usuario al log
+
     answer = processor.chatbot_response(question_user) # envio el mensaje al chatbot y obtengo la respuesta
     
     new_log = old_log + f"Bot: {answer} \n" # concateno el log anterior con la nueva respuesta
