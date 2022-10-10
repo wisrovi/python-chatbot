@@ -69,9 +69,9 @@ def inizia(msg, charge=False):
 
 utente = 'hello'
 res = inizia(utente, charge=True)
-print('Benvenuto! Per uscire, scrivi "Esci"')
 
 if __name__ == "__main__":
+    print('Benvenuto! Per uscire, scrivi "Esci"')
     while utente != 'esci':
         utente = str(input(""))
         res = inizia(utente)
