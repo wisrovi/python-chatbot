@@ -30,3 +30,15 @@ services:
     depends_on:
       - backend
     command: python app.py
+
+  telegram_connector:
+    build: ./telegram_connect
+    volumes:
+      - ./telegram_connect/src:/code
+      - ./telegram_connect/chats:/code/chats
+    environment:
+      - SO=docker
+    depends_on:
+      - backend
+      - frontend
+    command: python connection_bot_telegram.py
