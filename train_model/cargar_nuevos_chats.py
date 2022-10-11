@@ -129,6 +129,9 @@ def cargar_nuevos_chats():
     """
     print("Guardando intents.json")
     # print(lista_intents)
+    lista_intents = {
+        "intents": lista_intents
+    }
     with open(name_file, "w", encoding="utf-8") as f:
         json.dump(lista_intents, f, ensure_ascii= False, indent= 4)
     
