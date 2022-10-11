@@ -57,7 +57,7 @@
                             question: $("#question").val()
                         },
                         success: function (result) {
-                            $("#response").append("<br> <p>Person: " + $("#question").val() + "</p>" + "<br> <p> BOT_Uniongr: " + result.response) + "</p>";
+                            $("#response").append('<br> <p style="text-align: end;">Person: ' + $("#question").val() + "</p>" + "<br> <p> BOT_Uniongr: " + result.response) + "</p>";
                             $("#question").val("")
                         },
                         error: function (result) {
@@ -65,7 +65,7 @@
                         }
                     });
 
-
+                    
                 });
 
             });
