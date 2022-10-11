@@ -6,6 +6,7 @@ if os.path.exists("/data_train/ok.txt"):
 
 
 import nltk
+nltk.download('popular', quiet=True) # for downloading popular packages
 nltk.download('punkt')
 nltk.download('wordnet')
 nltk.download('omw-1.4')

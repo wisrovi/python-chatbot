@@ -19,6 +19,7 @@ services:
     depends_on:
       - training
 
+  # http://localhost:8888/
   frontend:
     build: ./frontend
     volumes:
