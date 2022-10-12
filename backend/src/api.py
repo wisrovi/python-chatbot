@@ -32,6 +32,11 @@ async def function_demo_post(inp: Msg):
     return {"message": respuesta}
 
 
+@app.post("/train", response_model=Response)
+async def train():
+    respuesta = "Modelo entrenado con exito"
+    return {"message": respuesta}
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

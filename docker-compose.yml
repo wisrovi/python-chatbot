@@ -2,17 +2,25 @@ version: "3"
 services:
   training:
     build: ./train_model
+    environment:
+      - SO=docker
     volumes:
       - ./train_model/model:/code/model
-      - ./train_model/data_train:/data_train
-    command: python train_bot.py
+      - ./train_model/nuevos_chats:/nuevos_chats
+      - ./received_files:/received_files
+    #command: python train_bot.py
+    command: python service.py
+    ports:
+      - "8887:8887"
 
   backend:
     build: ./backend
     volumes:
       - ./train_model/model:/model
-      - ./train_model/data_train:/data_train
+      - ./train_model/model/data_train:/data_train
       - ./backend/src:/code
+      - ./train_model/nuevos_chats:/nuevos_chats
+      - ./received_files:/received_files
     command: python api.py
     ports:
       - "8000:8000"

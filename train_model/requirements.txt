@@ -8,3 +8,5 @@ protobuf==3.19.6
 tensorboard==2.10.1
 tensorflow==2.10.0
 tensorflow-estimator==2.10.0
+flask
+pandas
