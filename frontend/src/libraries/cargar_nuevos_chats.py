@@ -1,4 +1,4 @@
-FOLDER = "nuevos_chats"
+FOLDER = "/nuevos_chats"
 
 import os
 import pandas as pd

@@ -1,4 +1,5 @@
-from src.config.config import ALLOWED, EXTENSION_FILE
+from config.config import ALLOWED, EXTENSION_FILE
+
 
 class UtilReceivedFile:
     def __init__(self, path_guardar_archivo_recibido: str, nombres_parametros: dict):

@@ -1,29 +1,6 @@
 {
     "intents": [
         {
-            "tag": "gracias",
-            "patterns": [
-                "Gracias",
-                "Eso es útil",
-                "Impresionante, gracias",
-                "Gracias por ayudarme"
-            ],
-            "responses": [
-                "¡Feliz de ayudar!",
-                "¡Cualquier momento!",
-                "Es un placer"
-            ],
-            "context": []
-        },
-        {
-            "tag": "noanswer",
-            "patterns": [],
-            "responses": [
-                "Lo siento, no puedo entenderte"
-            ],
-            "context": []
-        },
-        {
             "tag": "goodbye",
             "patterns": [
                 "Adiós",
@@ -40,9 +17,49 @@
             "context": []
         },
         {
+            "tag": "gracias",
+            "patterns": [
+                "Gracias",
+                "Eso es útil",
+                "Impresionante, gracias",
+                "Gracias por ayudarme"
+            ],
+            "responses": [
+                "¡Feliz de ayudar!",
+                "¡Cualquier momento!",
+                "Es un placer"
+            ],
+            "context": []
+        },
+        {
             "tag": "habeas_data",
             "patterns": [],
             "responses": [],
+            "context": []
+        },
+        {
+            "tag": "noanswer",
+            "patterns": [],
+            "responses": [
+                "Lo siento, no puedo entenderte"
+            ],
+            "context": []
+        },
+        {
+            "tag": "saludo",
+            "patterns": [
+                "Hola",
+                "Cómo estás?",
+                "¿Hay alguien ahí?",
+                "Hola",
+                "Hey",
+                "Buenos días"
+            ],
+            "responses": [
+                "Hola, gracias por visitar",
+                "Qué bueno verte de nuevo",
+                "Hola, ¿cómo puedo ayudar?"
+            ],
             "context": []
         },
         {
@@ -66,23 +83,6 @@
             "tag": "t_e.csv",
             "patterns": [],
             "responses": [],
-            "context": []
-        },
-        {
-            "tag": "saludo",
-            "patterns": [
-                "Hola",
-                "Cómo estás?",
-                "¿Hay alguien ahí?",
-                "Hola",
-                "Hey",
-                "Buenos días"
-            ],
-            "responses": [
-                "Hola, gracias por visitar",
-                "Qué bueno verte de nuevo",
-                "Hola, ¿cómo puedo ayudar?"
-            ],
             "context": []
         }
     ]

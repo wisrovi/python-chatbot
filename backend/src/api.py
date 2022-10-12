@@ -3,6 +3,7 @@ from fastapi import FastAPI, Request
 from pydantic import BaseModel
 
 from chatgui import inizia
+
 res = inizia("hello", charge=True)
 
 
@@ -34,7 +35,8 @@ async def function_demo_post(inp: Msg):
 
 @app.post("/train", response_model=Response)
 async def train():
-    respuesta = "Modelo entrenado con exito"
+    res = inizia("hello", charge=True)
+    respuesta = "Sistema actualizado"
     return {"message": respuesta}
 
 
