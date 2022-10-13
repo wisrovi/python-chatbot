@@ -39,6 +39,10 @@ def index():
                     return jsonify({"response": "No se pudo entrenar el modelo"})
 
                 response = "Modelo entrenado con exito en " + str(duration) + " segundos"
+
+                # TODO: guardar un log de la fecha y hora de entrenamiento
+                # TODO: guardar los tres ultmiros modelos entrenados
+
                 return jsonify(
                     {
                         "response": response,
@@ -54,6 +58,8 @@ def index():
 
     return render_template('index.html', **locals())
 
+# TODO: documentar los endpoints con swagger
+# TODO: documentar el codigo con docstring y comentarios
 
 if __name__ == '__main__':
     print("*"*10, "Starting Train model service in port 8887")

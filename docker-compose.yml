@@ -29,6 +29,7 @@ services:
       - ./frontend/src:/code
       - ./train_model/model:/code/model
       - ./user_data/nuevos_chats:/nuevos_chats
+      - ./user_data/tmp:/tmp
       - ./user_data/received_files:/received_files
     environment:
       - SO=docker
@@ -50,3 +51,24 @@ services:
       - backend
       - frontend
     command: python connection_bot_telegram.py
+
+  # TODO: create a new service for mongo db and connect it to the backend
+  # TODO: create a new service for redis and connect it to the backend
+  # TODO: create a new service for security and connect it to the backend
+  # TODO: create a new service for authentication and connect it to the backend
+  # TODO: create a new service for autohealing 
+  # TODO: create a new service for backup and restore using duplicati or duplicity
+  # TODO: create a new service for monitoring using prometheus and grafana
+  # TODO: create a new service for logging using fluentd and elasticsearch
+  # TODO: create a new service for load balancing using nginx
+  # TODO: create a new service for reverse proxy using nginx for https
+  # TODO: create a new service for build and deploy using jenkins and continuous integration using jenkins
+  # TODO: create a new service for email using postfix
+  # TODO: create a new service for instant messaging using mattermost
+  # TODO: create a new service for live chat using mattermost
+  # TODO: create a new service for file sharing using nextcloud
+  # TODO: create a new service for live streaming using jitsi
+  # TODO: create a new service for notifications using pushbullet
+  # TODO: create a new service for user management using keycloak
+  # TODO: create a new service for documentation using wiki with markdown or wikipedia
+  # TODO: create a new service for stadistics of usage 

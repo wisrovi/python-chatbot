@@ -40,8 +40,15 @@ def chatbotResponse():
 @app.route('/upload', methods=["GET", "POST"])
 def upload():
     if request.method == 'POST':
+        # TODO: pedir un login para poder subir archivos
+
         if not util.validar_archivo(request):
             redirect(request.url)
+
+        # TODO: extraer el archivo en una carpeta temporal
+        # TODO: validar que el archivo tenga la estructura correcta
+        # TODO: validar que los archivos esten completos y no haya tags repetidos o vacios o incompletos
+        # TODO: mover los archivos a la carpeta 'nuevos_chats'
 
         if not zip.extraer():
             return jsonify({"response": "No se pudo descomprimir el archivo"})
@@ -59,6 +66,13 @@ def upload():
 
     return render_template('received_file.html', **locals())
 
+
+# TODO: agregar un endpoint para que el frontend pueda consultar los tags que se encuentran 
+# TODO: agrewgar un endpoint para que el frontend pueda limpia la carpeta 'nuevos_chats'
+# TODO: agregar un endpoint para que el frontend pueda consultar el estado del entrenamiento
+# TODO: agregar un endpoint para que el frontend pueda hacer un CRUD de los usuarios
+# TODO: dcoumentar el codigo con docstrings y comentarios 
+# TODO: documentar los endpoints con swagger
 
 if __name__ == '__main__':
     print("Starting Frontend in port 8888")

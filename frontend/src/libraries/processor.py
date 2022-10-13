@@ -19,7 +19,7 @@ def chatbot_response(question: str):
         return res_data
 
 
-def informar_nuevo_modelo(question: str = "nuevo_modelo"):
+def informar_nuevo_modelo(question: str = "credenciales login"):
     res = requests.post(SERVER_CHAT + "/train", json={"msg": question})
     if res.status_code == 200:
         res_data = res.json()
