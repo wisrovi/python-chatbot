@@ -1,38 +1,42 @@
 version: "3"
 services:
   training:
-    build: ./train_model
+    build: ./services/train_model
     environment:
       - SO=docker
     volumes:
-      - ./train_model/model:/code/model
+      - ./services/train_model/model:/code/model
     command: python service.py
-    #ports:
-    #  - "8887:8887"
+    ports:
+      - "8886:8887"
 
   backend:
-    build: ./backend
+    build: ./services/backend
     volumes:
-      - ./train_model/model:/model
-      - ./train_model/model/data_train:/data_train
-      #- ./backend/src:/code
+      - ./services/train_model/model:/model
+      - ./services/train_model/model/data_train:/data_train
+      - ./services/backend/src:/code
     command: python api.py
-    #ports:
-    #  - "8000:8000"
+    environment:
+      - SO=docker
+    ports:
+      - "8887:8000"
     depends_on:
       - training
+      - redis
 
   # http://localhost:8888/
   frontend:
-    build: ./frontend
+    build: ./services/frontend
     volumes:
-      - ./frontend/src:/code
-      - ./train_model/model:/code/model
+      - ./services/frontend/src:/code
+      - ./services/train_model/model:/code/model
       - ./user_data/nuevos_chats:/nuevos_chats
       - ./user_data/tmp:/tmp
       - ./user_data/received_files:/received_files
     environment:
       - SO=docker
+      - DEBUG=1
     ports:
       - "8888:8888"
     depends_on:
@@ -41,10 +45,10 @@ services:
     command: python app.py
 
   telegram_connector:
-    build: ./telegram_connect
+    build: ./services/telegram_connect
     volumes:
-      - ./telegram_connect/src:/code
-      - ./telegram_connect/chats:/code/chats
+      - ./services/telegram_connect/src:/code
+      - ./user_data/chats:/code/chats
     environment:
       - SO=docker
     depends_on:
@@ -52,6 +56,17 @@ services:
       - frontend
     command: python connection_bot_telegram.py
 
+  redis:
+    image: redislabs/redismod
+    ports:
+      - "16379:6379"
+    environment:
+      - SO=docker
+    volumes:
+      - ./user_data/redis/data:/data
+    command: --dir /data --loadmodule /usr/lib/redis/modules/redistimeseries.so
+
+  # TODO: create a new service for the handle events (send email, ibr, etc)
   # TODO: create a new service for mongo db and connect it to the backend
   # TODO: create a new service for redis and connect it to the backend
   # TODO: create a new service for security and connect it to the backend
@@ -72,3 +87,5 @@ services:
   # TODO: create a new service for user management using keycloak
   # TODO: create a new service for documentation using wiki with markdown or wikipedia
   # TODO: create a new service for stadistics of usage 
+  # TODO: create a new service with DIUN for update docker images
+  # TODO: create a new service with autoheal for autohealing containers
