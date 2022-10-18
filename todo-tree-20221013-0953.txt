@@ -1,0 +1,81 @@
+└─ python-chatbot
+   ├─ backend
+   │  ├─ api.py
+   │  │  ├─ line 32: TODO : validar palabras de censura
+   │  │  ├─ line 33: TODO : validar si la pregunta es muy larga
+   │  │  ├─ line 34: TODO : validar si la pregunta es muy corta
+   │  │  ├─ line 35: TODO : recibir datos de usuario
+   │  │  ├─ line 36: TODO : evaluar sentimiento de la pregunta
+   │  │  ├─ line 38: TODO : leer los ultimos 5 registros del historial de chat de este usuario para crear un contexto
+   │  │  ├─ line 39: TODO : evaluar si la pregunta es similar a las ultimas 5 preguntas del historial de chat de este usuario
+   │  │  ├─ line 40: TODO : evaluar si la pregunta requiere de un contexto para ser respondida
+   │  │  ├─ line 41: TODO : evaluar si las 5 ultimas preguntas del historial de chat de este usuario son similares en tags
+   │  │  ├─ line 43: TODO : evaluar si la pregunta requiere una respuesta de un experto
+   │  │  ├─ line 44: TODO : evaluar si la pregunta requiere de una respuesta de un experto en un tema especifico
+   │  │  ├─ line 45: TODO : revisar si el tema tiene un experto asignado
+   │  │  ├─ line 46: TODO : revisar si el tema tiene un experto asignado y si el experto esta disponible
+   │  │  ├─ line 47: TODO : revisar si el tema tiene un experto asignado y si el experto esta disponible y si el experto esta en linea
+   │  │  ├─ line 49: TODO : evaluar si la pregunta requiere el disparo de un evento
+   │  │  ├─ line 50: TODO : revisar si el tema tiene eventos disponibles
+   │  │  ├─ line 54: TODO : guardar el historial de chat de este usuario en la base de datos de mongo con el formato:
+   │  │  ├─ line 69: TODO : recibir las crtendiales de login
+   │  │  ├─ line 71: TODO : guardar en mongoDB una copia de los inttents.json
+   │  │  ├─ line 72: TODO : guardar en mongoDB un log de la fecha y hora de entrenamiento
+   │  │  └─ line 73: TODO : guardar en mongoDB el log del login y la fecha y hora
+   │  └─ middleware.py
+   │     ├─ line 1: TODO : save log about the date and time of every data received
+   │     └─ line 2: TODO : save log about the date and time of every error
+   ├─ frontend
+   │  ├─ templates
+   │  │  └─ received_file.html
+   │  │     └─ line 1: TODO : aplicar boostrad a este template
+   │  └─ app.py
+   │     ├─ line 43: TODO : pedir un login para poder subir archivos
+   │     ├─ line 48: TODO : extraer el archivo en una carpeta temporal
+   │     ├─ line 49: TODO : validar que el archivo tenga la estructura correcta
+   │     ├─ line 50: TODO : validar que los archivos esten completos y no haya tags repetidos o vacios o incompletos
+   │     ├─ line 51: TODO : mover los archivos a la carpeta 'nuevos_chats'
+   │     ├─ line 70: TODO : agregar un endpoint para que el frontend pueda consultar los tags que se encuentran
+   │     ├─ line 71: TODO : agrewgar un endpoint para que el frontend pueda limpia la carpeta 'nuevos_chats'
+   │     ├─ line 72: TODO : agregar un endpoint para que el frontend pueda consultar el estado del entrenamiento
+   │     ├─ line 73: TODO : agregar un endpoint para que el frontend pueda hacer un CRUD de los usuarios
+   │     ├─ line 74: TODO : dcoumentar el codigo con docstrings y comentarios
+   │     └─ line 75: TODO : documentar los endpoints con swagger
+   ├─ mongoDB
+   │  └─ mongo_service.py
+   │     ├─ line 3: TODO : Add logging
+   │     ├─ line 4: TODO : Add error handling
+   │     ├─ line 5: TODO : Add config file
+   │     ├─ line 6: TODO : Add tests
+   │     ├─ line 7: TODO : Add CRUD for users
+   │     ├─ line 8: TODO : Add CRUD for tags
+   │     ├─ line 9: TODO : Add CRUD for intents
+   │     ├─ line 10: TODO : Add CRUD for history of training with filters by user, date, etc.
+   │     └─ line 11: TODO : Add CRUD for history of chatbot for users
+   ├─ train_model
+   │  └─ service.py
+   │     ├─ line 43: TODO : guardar un log de la fecha y hora de entrenamiento
+   │     ├─ line 44: TODO : guardar los tres ultmiros modelos entrenados
+   │     ├─ line 61: TODO : documentar los endpoints con swagger
+   │     └─ line 62: TODO : documentar el codigo con docstring y comentarios
+   └─ docker-compose.yml
+      ├─ line 55: TODO : create a new service for mongo db and connect it to the backend
+      ├─ line 56: TODO : create a new service for redis and connect it to the backend
+      ├─ line 57: TODO : create a new service for security and connect it to the backend
+      ├─ line 58: TODO : create a new service for authentication and connect it to the backend
+      ├─ line 59: TODO : create a new service for autohealing
+      ├─ line 60: TODO : create a new service for backup and restore using duplicati or duplicity
+      ├─ line 61: TODO : create a new service for monitoring using prometheus and grafana
+      ├─ line 62: TODO : create a new service for logging using fluentd and elasticsearch
+      ├─ line 63: TODO : create a new service for load balancing using nginx
+      ├─ line 64: TODO : create a new service for reverse proxy using nginx for https
+      ├─ line 65: TODO : create a new service for build and deploy using jenkins and continuous integration using jenkins
+      ├─ line 66: TODO : create a new service for email using postfix
+      ├─ line 67: TODO : create a new service for instant messaging using mattermost
+      ├─ line 68: TODO : create a new service for live chat using mattermost
+      ├─ line 69: TODO : create a new service for file sharing using nextcloud
+      ├─ line 70: TODO : create a new service for live streaming using jitsi
+      ├─ line 71: TODO : create a new service for notifications using pushbullet
+      ├─ line 72: TODO : create a new service for user management using keycloak
+      ├─ line 73: TODO : create a new service for documentation using wiki with markdown or wikipedia
+      └─ line 74: TODO : create a new service for stadistics of usage
