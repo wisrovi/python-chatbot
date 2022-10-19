@@ -80,7 +80,12 @@ class UtilReceivedFile:
                     if os.stat(path_file).st_size == 0:                    
                         summary["file"][name_file] = 0
                     else:
-                        data_file = pd.read_csv(path_file, index_col=False)
+                        try:
+                            data_file = pd.read_csv(path_file, index_col=False)
+                        except Exception as e:
+                            summary["file"][name_file] = -1
+                            folder_bad.append((summary["folder"], f"El archivo {file} no es valido"))
+                            continue
                         cantidad_filas = len(data_file.axes[0])
                         summary["file"][name_file] = cantidad_filas
                 if summary['folder'] != "noanswer":

@@ -29,7 +29,7 @@ services:
   frontend:
     build: ./services/frontend
     volumes:
-      # - ./services/frontend/src:/code
+      - ./services/frontend/src:/code
       - ./services/train_model/model:/code/model
       - ./user_data/nuevos_chats:/nuevos_chats
       - ./user_data/tmp:/tmp
@@ -48,7 +48,7 @@ services:
     build: ./services/telegram_connect
     volumes:
       - ./services/telegram_connect/src:/code
-      - ./user_data/chats:/code/chats
+      - ./user_data/chats_telegram:/code/chats
     environment:
       - SO=docker
     depends_on:
@@ -58,8 +58,8 @@ services:
 
   redis:
     image: redislabs/redismod
-    ports:
-      - "16379:6379"
+    #ports:
+    #  - "16379:6379"
     environment:
       - SO=docker
     volumes:
