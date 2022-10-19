@@ -1,6 +1,22 @@
 {
     "intents": [
         {
+            "tag": "contactenos",
+            "patterns": [
+                "Adiós",
+                "Hasta luego",
+                "Adiós",
+                "Encantado de charlar contigo, adiós",
+                "Hasta la próxima"
+            ],
+            "responses": [
+                "Hasta luego, gracias por visitarnos",
+                "Que tengas un buen día",
+                "¡Adiós! Vuelve pronto"
+            ],
+            "context": []
+        },
+        {
             "tag": "goodbye",
             "patterns": [
                 "Adiós",
@@ -33,8 +49,18 @@
         },
         {
             "tag": "habeas_data",
-            "patterns": [],
-            "responses": [],
+            "patterns": [
+                "Adiós",
+                "Hasta luego",
+                "Adiós",
+                "Encantado de charlar contigo, adiós",
+                "Hasta la próxima"
+            ],
+            "responses": [
+                "Hasta luego, gracias por visitarnos",
+                "Que tengas un buen día",
+                "¡Adiós! Vuelve pronto"
+            ],
             "context": []
         },
         {

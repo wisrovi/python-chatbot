@@ -2,42 +2,97 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8">
         <title>Train model</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     </head>
     <body>
-        <form method="POST" enctype="multipart/form-data"> <!--onsubmit="showTime('Cargando datos y capacitando al modelo.')">-->
-            <label for="fname">Elija banco de capacitacion:</label>
-            <input type="file" id="fname" name="file1"><br><br>
-            <input type="submit" value="Cargar Información">
-        </form>
+        <div class="container">
+            <div class="row align-items-center vh-100">
+                <div class="col-6 mx-auto">
+                    <div class="card shadow border">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <div class="card-body">
+                                <h5 class="card-text">
+                                    Por favor seleccione el archivo ZIP que comprime todas las carpetas de TAGS
+                                </h5>
+                                <form method="POST" enctype="multipart/form-data">
+                                    <!--onsubmit="showTime('Cargando datos y capacitando al modelo.')">-->
+
+                                    <!-- User -->
+                                    <br>
+                                        <div class="user"> <label for="fname">Usuario:</label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <input type="text" id="user" title="Por favor digite el usuario" required name="username" class="form-control"/>
+                                    </div>
+
+
+                                    <!-- Password -->
+                                    <div class="password">
+                                        <label for="fname">Password:</label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <input type="password" id="password" title="Por favor digite la contraseña" required minlength="4" maxlength="8" autocomplete="current-password" name="password" class="form-control"/>
+                                    </div>
+
+
+                                    <!-- File -->
+                                    <div class="row">
+                                        <label for="fname">Elija banco de capacitacion:</label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <input type="file" id="fname" title="Por favor elija un archivo .zip que contenga los nuevos chats" required name="file1" class="form-control-file"/>
+                                        <br><br>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <input type="submit" value="Cargar Nuevos chats " class="btn btn-primary"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!--<script src="sweetalert2.all.min.js"></script>
-        <script>
-            function showTime(msg) {
-                let timerInterval
-                Swal.fire({
-                    title: 'Información!',
-                    html: msg,
-                    timer: 2000,
-                    timerProgressBar: true,
-                    didOpen: () => {
-                        Swal.showLoading()
-                        const b = Swal.getHtmlContainer().querySelector('b')
-                        timerInterval = setInterval(() => {
-                            b.textContent = Swal.getTimerLeft()
-                        }, 100)
-                    },
-                    willClose: () => {
-                        clearInterval(timerInterval)
-                    }
-                }).then((result) => {
-                    /* Read more about handling dismissals below */
-                    if (result.dismiss === Swal.DismissReason.timer) {
-                        console.log('I was closed by the timer')
-                    }
-                });
-            }
-        </script>-->
+                        <script>
+                            function showTime(msg) {
+                                let timerInterval
+                                Swal.fire({
+                                    title: 'Información!',
+                                    html: msg,
+                                    timer: 2000,
+                                    timerProgressBar: true,
+                                    didOpen: () => {
+                                        Swal.showLoading()
+                                        const b = Swal.getHtmlContainer().querySelector('b')
+                                        timerInterval = setInterval(() => {
+                                            b.textContent = Swal.getTimerLeft()
+                                        }, 100)
+                                    },
+                                    willClose: () => {
+                                        clearInterval(timerInterval)
+                                    }
+                                }).then((result) => {
+                                    /* Read more about handling dismissals below */
+                                    if (result.dismiss === Swal.DismissReason.timer) {
+                                        console.log('I was closed by the timer')
+                                    }
+                                });
+                            }
+                        </script>-->
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     </body>
 </html>

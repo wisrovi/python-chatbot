@@ -1,4 +1,5 @@
 import os
+import shutil
 from flask import Flask, render_template, jsonify, request, redirect
 from libraries.processor import chatbot_response, solicitar_entrenamiento, informar_nuevo_modelo, get_version_backend, get_version_training
 from libraries.UtilZipFile import UtilZipFile
@@ -19,10 +20,17 @@ else:
     print("Execution in: Docker")
 
 if os.environ.get("SO") is None:
-    path_descomprimir = os.path.dirname(os.path.abspath(__file__)) + os.sep + "nuevos_chats" + os.sep
+    path_descomprimir = os.path.dirname(os.path.abspath(__file__)) + os.sep + "tmp" + os.sep
     print("Execution in: Local")
 else:
-    path_descomprimir = os.sep + "nuevos_chats" + os.sep
+    path_descomprimir = os.sep + "tmp" + os.sep
+    print("Execution in: Docker")
+
+if os.environ.get("SO") is None:
+    path_poner_datos_para_entrenar = os.path.dirname(os.path.abspath(__file__)) + os.sep + "nuevos_chats" + os.sep
+    print("Execution in: Local")
+else:
+    path_poner_datos_para_entrenar = os.sep + "nuevos_chats" + os.sep
     print("Execution in: Docker")
 
 util = UtilReceivedFile(path_guardar_archivo_recibido=filepath, nombres_parametros={"zip": "file1"})
@@ -60,21 +68,49 @@ def chatbotResponse():
     return jsonify({"response": response})
 
 
-@app.route('/upload', methods=["GET", "POST"])
+@app.route('/upload', methods=["GET"])
 def upload():
+    return render_template('received_file0.html', **locals())
+
+
+@app.route('/uploadData', methods=["GET", "POST"])
+def upload_data():
     if request.method == 'POST':
-        # TODO: pedir un login para poder subir archivos
+        if not util.validar_credenciales(request):
+            print("Credenciales incorrectas")
+            return jsonify({"response": "Credenciales incorrectas"})
 
         if not util.validar_archivo(request):
-            redirect(request.url)
+            return jsonify({"response": "Archivo no valido"})
 
-        # TODO: extraer el archivo en una carpeta temporal
-        # TODO: validar que el archivo tenga la estructura correcta
-        # TODO: validar que los archivos esten completos y no haya tags repetidos o vacios o incompletos
-        # TODO: mover los archivos a la carpeta 'nuevos_chats'
+        directorios_temporales = os.listdir(path_descomprimir)
+        for directorio in directorios_temporales:
+            shutil.rmtree(os.path.join(path_descomprimir, directorio))
 
         if not zip.extraer():
             return jsonify({"response": "No se pudo descomprimir el archivo"})
+
+        validacion_integridad = util.validar_integridad_archivos(path_descomprimir)
+        if not validacion_integridad[0]:
+            archivos_falla = validacion_integridad[1]
+            problemas = list()
+            for archivo in archivos_falla:
+                file = archivo[0]
+                problema = archivo[1]
+                problemas.append(dict(folder=file, problem=problema))
+            return jsonify(
+                {
+                    "fail_tags": problemas
+                }
+            )        
+       
+        """
+        mover todos los archivos de la carpeta /tmp a la carpeta /nuevos_chats
+        """
+        contenidos = os.listdir(path_descomprimir)
+        for contenido in contenidos:
+            shutil.copytree(os.path.join(path_descomprimir, contenido), os.path.join(path_poner_datos_para_entrenar, contenido), dirs_exist_ok=True)
+            shutil.rmtree(os.path.join(path_descomprimir, contenido), ignore_errors=True)
 
         try:
             cargar_nuevos_chats()

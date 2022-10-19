@@ -7,20 +7,20 @@ services:
     volumes:
       - ./services/train_model/model:/code/model
     command: python service.py
-    ports:
-      - "8886:8887"
+    #ports:
+    #  - "8886:8887"
 
   backend:
     build: ./services/backend
     volumes:
       - ./services/train_model/model:/model
       - ./services/train_model/model/data_train:/data_train
-      - ./services/backend/src:/code
+      #- ./services/backend/src:/code
     command: python api.py
     environment:
       - SO=docker
-    ports:
-      - "8887:8000"
+    #ports:
+    #  - "8887:8000"
     depends_on:
       - training
       - redis
@@ -29,7 +29,7 @@ services:
   frontend:
     build: ./services/frontend
     volumes:
-      - ./services/frontend/src:/code
+      # - ./services/frontend/src:/code
       - ./services/train_model/model:/code/model
       - ./user_data/nuevos_chats:/nuevos_chats
       - ./user_data/tmp:/tmp
@@ -38,7 +38,7 @@ services:
       - SO=docker
       - DEBUG=1
     ports:
-      - "8888:8888"
+      - "1037:8888"
     depends_on:
       - backend
       - training
