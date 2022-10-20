@@ -2,3 +2,4 @@ numpy==1.23.3
 flask
 pandas
 requests
+flask-swagger

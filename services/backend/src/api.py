@@ -1,3 +1,4 @@
+import json
 import uvicorn
 from fastapi import FastAPI, Request
 from fastapi_redis_cache import cache
@@ -11,12 +12,14 @@ app = FastAPI(title="backend chatbot Uniongr", description="API for chatbot", ve
 
 
 time.sleep(2)
-print("backend is ready")
+print("backend is ready and charging model")
 
 
 # 1.1. Charge the model
 from chatgui import inizia
 res = inizia("hello", charge=True)
+
+print("model charged")
 
 
 # 1.2 Connect to Redis 
@@ -43,6 +46,14 @@ class Response(BaseModel):
     tag: str = ""
 
 
+class Tags(BaseModel):
+    message: list
+
+
+class Intents(BaseModel):
+    message: dict
+
+
 class Version(BaseModel):
     version: str
 
@@ -52,6 +63,27 @@ class Version(BaseModel):
 @app.get("/version", response_model=Version)
 async def version(request: Request):
     return {"version": "1.0.0"}
+
+
+# ver tags
+@app.get("/tags", response_model=Tags)
+async def tags(request: Request):
+    intents = json.loads(open('/data_train/intents.json').read())
+    intents = intents["intents"]
+    tags = []
+    for intent in intents:
+        tags.append(intent["tag"])
+    
+    print("tags: ", tags)
+    return {"message": tags}
+
+
+# ver intents
+@app.get("/intents", response_model=Intents)
+async def intents(request: Request):
+    intents = json.loads(open('/data_train/intents.json').read())
+    print("intents: ", intents)
+    return {"message": intents}
 
 
 @app.get("/", response_model=Response)

@@ -6,21 +6,25 @@ services:
       - SO=docker
     volumes:
       - ./services/train_model/model:/code/model
+
+      - ./services/train_model/src:/code/src
+      - ./services/train_model/templates:/code/templates
+      - ./services/train_model/service.py:/code/service.py
     command: python service.py
-    #ports:
-    #  - "8886:8887"
+    ports:
+      - "8886:8887"
 
   backend:
     build: ./services/backend
     volumes:
       - ./services/train_model/model:/model
       - ./services/train_model/model/data_train:/data_train
-      #- ./services/backend/src:/code
+      - ./services/backend/src:/code
     command: python api.py
     environment:
       - SO=docker
-    #ports:
-    #  - "8887:8000"
+    ports:
+      - "8887:8000"
     depends_on:
       - training
       - redis

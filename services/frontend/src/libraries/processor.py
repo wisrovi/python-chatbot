@@ -36,6 +36,21 @@ def get_version_backend():
     return "Error"
 
 
+def get_tags():
+    res = requests.get(SERVER_BACKEND_CHAT + "/tags")
+    if res.status_code == 200:
+        res_data = res.json()
+        return res_data["message"]
+    return "Error"
+
+
+def get_intents():
+    res = requests.get(SERVER_BACKEND_CHAT + "/intents")
+    if res.status_code == 200:
+        res_data = res.json()
+        return res_data["message"]
+    return "Error"
+
 
 """
     Funciones para tratar con el training
@@ -56,9 +71,11 @@ def solicitar_entrenamiento():
     question = "entrenar"
     mensaje = "Error"
     status = 404
+    res_data = dict()
+
     res = requests.post(SERVER_RNA + "/RNA", json={"msg": question})
     if res.status_code == 200:
         res_data = res.json()
         mensaje = res_data["response"]
         status = res_data["status"]
-    return mensaje, status
+    return list((mensaje, status)), res_data

@@ -8,18 +8,13 @@ app = Flask(__name__)
 
 if os.environ.get("SO") is None:
     filepath = os.path.dirname(os.path.abspath(__file__)) + os.sep + "received_files" + os.sep + "recibido.zip"
-    print("Execution in: Local")
-else:
-    filepath = os.sep + "received_files" + os.sep + "recibido.zip"
-    print("Execution in: Docker")
-
-
-if os.environ.get("SO") is None:
     path_descomprimir = os.path.dirname(os.path.abspath(__file__)) + os.sep + "nuevos_chats" + os.sep
     print("Execution in: Local")
 else:
+    filepath = os.sep + "received_files" + os.sep + "recibido.zip"
     path_descomprimir = os.sep + "nuevos_chats" + os.sep
     print("Execution in: Docker")
+
 
 
 """
@@ -29,23 +24,30 @@ get version
 def version():
     return jsonify({"version": "1.0.0"})
 
+
 @app.route('/RNA', methods=["GET", "POST"])
 def index():
     if request.method == 'POST':
         # leyendo jsoo recibido
-        json_received = request.get_json()
+        try:
+            json_received = request.get_json()
+        except Exception as e:
+            form = request.form
+            json_received = form.to_dict()
+
         if json_received is not None:
             if json_received["msg"] == "entrenar":
                 duration = 0
+                keys = history = None
                 try:
                     start_time = time.time()
-                    train_model()
+                    loss, accuracy = train_model()
                     end_time = time.time()
                     duration = end_time - start_time
                 except Exception as e:
                     return jsonify({"response": "No se pudo entrenar el modelo"})
 
-                response = "Modelo entrenado con exito en " + str(duration) + " segundos"
+                response = "Modelo entrenado con exito en " + str(round(duration, 2)) + " segundos"
 
                 # TODO: guardar un log de la fecha y hora de entrenamiento
                 # TODO: guardar los tres ultmiros modelos entrenados
@@ -53,6 +55,8 @@ def index():
                 return jsonify(
                     {
                         "response": response,
+                        "loss": loss,
+                        "accuracy": accuracy,
                         "status": 200
                     }
                 )
