@@ -1,3 +1,4 @@
+import json
 import os
 from flask import Flask, render_template, jsonify, request
 from src.libraries.train_bot import train_model
@@ -63,6 +64,18 @@ def index():
                 today = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
                 redis.save("model_date", str(today))
                 redis.crear_autoincremental("count_train")
+
+                # leer archivo intents.json
+                with open('model/data_train/intents.json') as file:
+                    intents = json.load(file)
+                redis.save("model_intents", intents)
+
+                intents = intents["intents"]
+                tags = []
+                for intent in intents:
+                    tags.append(intent["tag"])
+                redis.save("model_tags", {"tags": tags})
+
 
                 return jsonify(
                     {

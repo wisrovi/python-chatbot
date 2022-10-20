@@ -22,11 +22,14 @@
             <br>
 
             <div class="row">
+                <!-- TODO: crear una etiqueta de presentacion indicando que puede hacer con este chatbot  -->
+                <!-- TODO: validar que no se pueda enviar datos vacios-->
                 <div class="col-lg-9">
-                    <input class="form-control" type="text" name="question" id="question">
+                    <input class="form-control" type="text" name="question" id="question" minlength="4">
                 </div>
                 <div class="col-lg-3">
                     <button class="btn btn-primary btn-block" id="submit-button">Send</button>
+                    <!-- TODO: que el boton reaccione al ENTER  -->
                 </div>
             </div>
             <br>
@@ -44,12 +47,9 @@
 
 
         <script>
-
-
             jQuery(document).ready(function () {
                 $("#submit-button").click(function (e) {
                     e.preventDefault();
-
                     $.ajax({
                         type: "POST",
                         url: "/chatbot",
@@ -57,17 +57,15 @@
                             question: $("#question").val()
                         },
                         success: function (result) {
+                            /* TODO: que los nuevos textos del historial aparezcan encima del boton y con autoscroll */
                             $("#response").append('<br> <p style="text-align: end;">Person: ' + $("#question").val() + "</p>" + "<br> <p> BOT_Uniongr: " + result.response) + "</p>";
                             $("#question").val("")
                         },
                         error: function (result) {
                             alert('error');
                         }
-                    });
-
-                    
+                    });                    
                 });
-
             });
         </script>
 

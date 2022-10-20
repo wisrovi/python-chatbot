@@ -1,3 +1,6 @@
+import json
+
+
 class Redis(object):
     import redis
     def __init__(self, host, port, db_n=0):
@@ -14,6 +17,9 @@ class Redis(object):
         return self.r.incr(key)
 
     def save(self, key, value):
+        if isinstance(value, dict):
+            value = json.dumps(value)
+        
         self.r.set(key, value)
 
     def save_pipeline(self, data:dict):
@@ -24,11 +30,22 @@ class Redis(object):
         pipe.execute()
 
     def read(self, key):
-        data = self.r.get(key)
+        try:
+            data = self.r.get(key)
+        except Exception as e:
+            return None
+
+        # convertir a dict si es posible
+        try:
+            data = json.loads(data)
+        except:
+            pass
 
         # bytes to string
-        if data:
+        try:
             data = data.decode('utf-8')
+        except:
+            pass
 
         # convert string to int if possible
         try:
@@ -38,7 +55,11 @@ class Redis(object):
 
         return data
 
+    def read_dict(self, key):
+        return self.r.hgetall(key)
+
+
 
 def start_conection(server, port):
-    redis = Redis(host=server, port=port, db_n=1)
+    redis = Redis(host=server, port=port, db_n=0)
     return redis

@@ -11,6 +11,16 @@ import time
 app = FastAPI(title="backend chatbot Uniongr", description="API for chatbot", version="0.1")
 
 
+from libraries.Redis import start_conection
+if os.environ.get("SO") is None:
+    redis = start_conection(server="localhost", port=16379)
+    print("Execution in: Local")
+else:
+    redis = start_conection(server="redis", port=6379)
+    print("Execution in: Docker")
+
+
+
 time.sleep(2)
 print("backend is ready and charging model")
 
@@ -68,12 +78,11 @@ async def version(request: Request):
 # ver tags
 @app.get("/tags", response_model=Tags)
 async def tags(request: Request):
-    intents = json.loads(open('/data_train/intents.json').read())
-    intents = intents["intents"]
-    tags = []
-    for intent in intents:
-        tags.append(intent["tag"])
-    
+    model_tags = redis.read("model_tags")
+    if model_tags is None:
+        return {"message": []}
+    else:
+        tags = model_tags.get("tags")    
     print("tags: ", tags)
     return {"message": tags}
 
@@ -81,9 +90,9 @@ async def tags(request: Request):
 # ver intents
 @app.get("/intents", response_model=Intents)
 async def intents(request: Request):
-    intents = json.loads(open('/data_train/intents.json').read())
+    model_intents = redis.read("model_intents")
     print("intents: ", intents)
-    return {"message": intents}
+    return {"message": model_intents}
 
 
 @app.get("/", response_model=Response)

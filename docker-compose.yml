@@ -67,8 +67,19 @@ services:
     environment:
       - SO=docker
     volumes:
-      - ./user_data/redis/data:/data
+      - ./user_data/cache_redis:/data
     command: --dir /data --loadmodule /usr/lib/redis/modules/redistimeseries.so
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+      - HTTP_USER=root
+      - HTTP_PASSWORD=qwerty
+    ports:
+      - 8081:8081
+    depends_on:
+      - redis
 
   # TODO: create a new service for the handle events (send email, ibr, etc)
   # TODO: create a new service for mongo db and connect it to the backend
