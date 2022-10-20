@@ -1,7 +1,9 @@
 import os
 from flask import Flask, render_template, jsonify, request
 from src.libraries.train_bot import train_model
+from src.libraries.Redis import start_conection
 import time
+import datetime
 
 app = Flask(__name__)
 
@@ -9,10 +11,12 @@ app = Flask(__name__)
 if os.environ.get("SO") is None:
     filepath = os.path.dirname(os.path.abspath(__file__)) + os.sep + "received_files" + os.sep + "recibido.zip"
     path_descomprimir = os.path.dirname(os.path.abspath(__file__)) + os.sep + "nuevos_chats" + os.sep
+    redis = start_conection(server="localhost", port=16379)
     print("Execution in: Local")
 else:
     filepath = os.sep + "received_files" + os.sep + "recibido.zip"
     path_descomprimir = os.sep + "nuevos_chats" + os.sep
+    redis = start_conection(server="redis", port=6379)
     print("Execution in: Docker")
 
 
@@ -51,6 +55,14 @@ def index():
 
                 # TODO: guardar un log de la fecha y hora de entrenamiento
                 # TODO: guardar los tres ultmiros modelos entrenados
+
+                redis.save("model_duration", str(round(duration, 2)) + " segundos")
+                redis.save("model_loss", str(loss))
+                redis.save("model_accuracy", str(accuracy))
+
+                today = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+                redis.save("model_date", str(today))
+                redis.crear_autoincremental("count_train")
 
                 return jsonify(
                     {

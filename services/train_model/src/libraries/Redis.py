@@ -1,5 +1,3 @@
-import sys
-
 class Redis(object):
     import redis
     def __init__(self, host, port, db_n=0):
@@ -40,38 +38,7 @@ class Redis(object):
 
         return data
 
-redis = Redis(host='localhost', port=16379, db_n=1)
 
-redis.crear_autoincremental('id')
-
-redis.save('Bahamas', 'Nassau')
-redis.save('Croatia', 'Zagreb')
-
-print(redis.read('Bahamas'))
-
-redis.save_pipeline(
-    {
-        'foo': 'bar', 
-        'bing': 'queso'
-    })
-
-print(redis.read('bing'))
-print(redis.read('id'))
-
-
-
-
-sys.exit(99)
-
-import requests
-
-SERVER = "http://localhost:8000"
-print(requests.get(SERVER).json())
-
-
-res = requests.post(SERVER + "/chatbot", json={"msg": "bye"})
-print(res.status_code)
-
-if res.status_code == 200:
-    res_data = res.json()
-    print(res_data)
+def start_conection(server, port):
+    redis = Redis(host=server, port=port, db_n=1)
+    return redis

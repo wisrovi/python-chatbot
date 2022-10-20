@@ -7,6 +7,7 @@ from libraries.processor import chatbot_response, solicitar_entrenamiento, \
 from libraries.UtilZipFile import UtilZipFile
 from libraries.UtilReceivedFile import UtilReceivedFile
 from libraries.cargar_nuevos_chats import cargar_nuevos_chats
+from libraries.Redis import start_conection
 import time
 from flask_swagger import swagger
 
@@ -16,32 +17,25 @@ time.sleep(1)
 
 app = Flask(__name__)
 
-
 if os.environ.get("SO") is None:
     filepath = os.path.dirname(os.path.abspath(__file__)) + os.sep + "received_files" + os.sep + "recibido.zip"
+    path_descomprimir = os.path.dirname(os.path.abspath(__file__)) + os.sep + "tmp" + os.sep
+    path_poner_datos_para_entrenar = os.path.dirname(os.path.abspath(__file__)) + os.sep + "nuevos_chats" + os.sep
+    redis = start_conection(server="localhost", port=16379)
     print("Execution in: Local")
 else:
     filepath = os.sep + "received_files" + os.sep + "recibido.zip"
-    print("Execution in: Docker")
-
-if os.environ.get("SO") is None:
-    path_descomprimir = os.path.dirname(os.path.abspath(__file__)) + os.sep + "tmp" + os.sep
-    print("Execution in: Local")
-else:
     path_descomprimir = os.sep + "tmp" + os.sep
+    path_poner_datos_para_entrenar = os.sep + "nuevos_chats" + os.sep
+    redis = start_conection(server="redis", port=6379)
     print("Execution in: Docker")
 
-if os.environ.get("SO") is None:
-    path_poner_datos_para_entrenar = os.path.dirname(os.path.abspath(__file__)) + os.sep + "nuevos_chats" + os.sep
-    print("Execution in: Local")
-else:
-    path_poner_datos_para_entrenar = os.sep + "nuevos_chats" + os.sep
-    print("Execution in: Docker")
 
 util = UtilReceivedFile(path_guardar_archivo_recibido=filepath, nombres_parametros={"zip": "file1"})
 zip = UtilZipFile(filepath, ruta_extraccion=path_descomprimir)
 
 
+# https://pypi.org/project/flask-swagger/
 @app.route("/docs", methods=["GET"])
 def spec():
     swag = swagger(app)
@@ -188,6 +182,25 @@ def upload_data():
         return jsonify({"response": res_data})
 
     return render_template('received_file.html', **locals())
+
+
+# get last training
+@app.route('/last_training', methods=["GET"])
+def last_training():
+    model_duration = redis.read("model_duration")
+    model_loss = redis.read("model_loss")
+    model_accuracy = redis.read("model_accuracy")
+    model_date = redis.read("model_date")
+    count_train = redis.read("count_train")
+    return jsonify({
+        "model_duration": model_duration,
+        "model_loss": model_loss,
+        "model_accuracy": model_accuracy,
+        "model_date": model_date,
+        "count_train": count_train
+        })
+
+
 
 
 # TODO: agregar un endpoint para que el frontend pueda consultar los tags que se encuentran 

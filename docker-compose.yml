@@ -48,22 +48,22 @@ services:
       - training
     command: python app.py
 
-  telegram_connector:
-    build: ./services/telegram_connect
-    volumes:
-      - ./services/telegram_connect/src:/code
-      - ./user_data/chats_telegram:/code/chats
-    environment:
-      - SO=docker
-    depends_on:
-      - backend
-      - frontend
-    command: python connection_bot_telegram.py
+  #telegram_connector:
+  #  build: ./services/telegram_connect
+  #  volumes:
+  #    - ./services/telegram_connect/src:/code
+  #    - ./user_data/chats_telegram:/code/chats
+  #  environment:
+  #    - SO=docker
+  #  depends_on:
+  #    - backend
+  #    - frontend
+  #  command: python connection_bot_telegram.py
 
   redis:
     image: redislabs/redismod
-    #ports:
-    #  - "16379:6379"
+    ports:
+      - "16379:6379"
     environment:
       - SO=docker
     volumes:
