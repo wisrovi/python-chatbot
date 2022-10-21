@@ -48,6 +48,17 @@ services:
       - training
     command: python app.py
 
+  demo:
+    build: ./services/demo
+    volumes:
+      - ./services/demo/src:/code
+    ports:
+      - "1038:80"
+    depends_on:
+      - backend
+      - training
+      - frontend
+
   #telegram_connector:
   #  build: ./services/telegram_connect
   #  volumes:

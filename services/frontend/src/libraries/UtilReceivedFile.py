@@ -1,7 +1,6 @@
 from calendar import c
 import os
 import pandas as pd
-from xml.dom import HIERARCHY_REQUEST_ERR
 from config.config import ALLOWED, EXTENSION_FILE
 from config.autorization import Credenciales
 
@@ -48,7 +47,7 @@ class UtilReceivedFile:
             return True
         return False
 
-    def validar_integridad_archivos(self, path_descomprimir, min_filas=2):
+    def validar_integridad_archivos(self, path_descomprimir, min_filas=1):
         folder_ok = []
         folder_bad = []
         summary = dict(folder="", file=dict(q="",c="",r=""))
@@ -94,10 +93,10 @@ class UtilReceivedFile:
                     else:
                         fail_q = False
                         fail_r = False
-                        if summary["file"]["q"] < min_filas:
+                        if summary["file"]["q"] <= min_filas:
                             fail_q = True
 
-                        if summary["file"]["r"] < min_filas:
+                        if summary["file"]["r"] <= min_filas:
                             fail_r = True
 
                         if fail_q and fail_r:

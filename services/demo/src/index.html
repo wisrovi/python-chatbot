@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Service Demo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <img src="static/logo-union.jpeg" style="width:50%;">
+
+
+        <div class="box transform contendor">
+            <!--<iframe src="http://frontend:8888/" 
+                class="box transform contendor" 
+                title="description" 
+                width="0px" height="0px"></iframe>                 
+            -->
+                
+                <iframe src="http://3.230.72.2:1037/" 
+                    class="box transform contendor" 
+                    title="description" 
+                    width="0px" height="0px"></iframe> 
+            
+        </div>
+
+        <div class="btn-wsp">            
+            <input type="button" id="button" class="btn btn-wsp">  
+                <i class="fa-sharp fa-solid fa-headset"></i>
+            </input>            
+        </div>
+        
+
+        <script>
+            $("#button").click(function () {
+                $(".transform").toggleClass("transform-active");
+            });
+        </script>
+        <style>
+            body {
+                padding-top: 50px;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+
+            .box {
+                background-color: transparent;
+                height: 0px;
+                width: 0px;
+            }
+
+            .transform {
+                transition: all 2s ease;
+            }
+
+            .transform-active {
+                background-color: transparent;
+                height: 450px;
+                width: 300px;
+                border: 3px solid #1e32eb;
+            }
+
+            .contendor {
+                position: fixed;
+                bottom: 120px;
+                right: 30px;
+                width: 300px;
+            }
+
+            .btn-wsp {
+                position: fixed;
+                width: 55px;
+                height: 55px;
+                line-height: 55px;
+                bottom: 60px;
+                right: 40px;
+                background-color: #1e32eb;
+                color: rgb(228, 214, 214);
+                border-radius: 50%;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: opx 1px 10px rgba(0, 0, 0, 0.3);
+                z-index: 100;
+            }
+
+            .btn-wsp:hover {
+                text-decoration: none;
+                color: #0d9df0;
+                background: rgb(219, 12, 12);
+            }
+        </style>
+    </body>
+</html>
