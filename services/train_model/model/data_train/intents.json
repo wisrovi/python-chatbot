@@ -3,215 +3,65 @@
         {
             "tag": "acerca_de_nosotros",
             "patterns": [
-                "Cual es la mision de la empresa",
-                "cual es la vision de la empresa",
-                "como saber acerca de ustedes",
-                "Cuales son las politicas de union",
-                "cual es la hisotria de union",
-                "cual es el estructura jerarquica",
-                "cual es el proceso regulatorio",
-                "cuales son los valores de union",
-                "Acerca de nosotros"
+                "mision",
+                "vision",
+                "historia"
             ],
             "responses": [
-                "puedes saber mas sobre nosotros en nuestra web",
-                "puedes consultar las siguientes inquietudes en el siguiente link",
-                "en el siguiente link te daremos una informacion mucho mas detallada"
+                "La mision,vision-valores institucionales-historia-politicas e informacion corporativa- responsabilidad social y proceso regulatorio lo podras consultar mas detalladamente en el siguuiente link <a href=\"https://www.uniongr.co/nuestra-compania/\" target=\"parent\">nuestra-compania</a>",
+                "La mision,vision-valores institucionales-historia-politicas e informacion corporativa- responsabilidad social y proceso regulatorio lo podras consultar mas detalladamente en el siguuiente link <a href=\"https://www.uniongr.co/nuestra-compania/\" target=\"parent\">nuestra-compania</a>"
             ],
             "context": []
         },
         {
             "tag": "aportes_empleados",
             "patterns": [
-                "donde puede consultar los aportes que he realizado",
-                "donde puedo consultar el comprobante de mis aportes",
-                "puedo consultar mis aportes",
-                "puedo consultar mi aportes a pension",
-                "puedo consultar mis aportes a salud"
+                "aportes ",
+                "cesantias",
+                "salud",
+                "pension"
             ],
             "responses": [
-                "lo puedes consultar en la siguiente link",
-                "el siguiente link te dara una respuesta a tu pregunta",
-                "En la pagina web que se adjuntara a continuacion podras consultarlo"
+                "en el siguiente enlace que se enviara podra consultar sus aportes de forma individual donde debe ingresar su numero de cedula y un rango de fecha o periodo de cotizacion y el sistema te dejara descargar un archivo pdf donde podras ver la informacion relacionada a pension-riesgos laborales-eps y caja de compensacion <a href=\"https://www.suaporte.com.co/Web/faces/pages/comprobantes/consultadirecta/consultaDirectaLogin.xhtml\" target=\"parent\">consultadirecta</a>",
+                "en el siguiente enlace que se enviara podra consultar sus aportes de forma individual donde debe ingresar su numero de cedula y un rango de fecha o periodo de cotizacion y el sistema te dejara descargar un archivo pdf donde podras ver la informacion relacionada a pension-riesgos laborales-eps y caja de compensacion <a href=\"https://www.suaporte.com.co/Web/faces/pages/comprobantes/consultadirecta/consultaDirectaLogin.xhtml\" target=\"parent\">consultadirecta</a>"
             ],
             "context": []
         },
         {
             "tag": "certificados_tributarios",
             "patterns": [
-                "donde puedo consultar mi certificado de retencion en la fuente",
-                "donde puedo consultar mi certificado de rte fte",
-                "donde puedo consultar mi cetificado de rte iva",
-                "donde puedo consultar mi cetificado de retencion de iva",
-                "donde puedo consultar mis certificados tributarios",
-                "rte fte",
-                "rte iva",
-                "certificados tributarios",
-                "retencion en la fuente"
+                "certificado tributario",
+                "retencion en la fuente",
+                "retencion iva"
             ],
             "responses": [
-                "lo puedes consultar en el siguiente link",
-                "puedes consultar las siguientes inquietudes en el siguiente link",
-                "en el siguiente link te daremos una informacion mucho mas detallada"
+                " en el siguiente link podras descargar y consultar la informacion relacionada a los certificados tributarios para ingresar debes tener el nit y la clave a continuacion te adjuntaremos el link<a href=\"http://wm.uniongr.co:8089/retenciones/\" target=\"parent\">retenciones</a>  y  si tienes dudas  o inquietudes escribe al correo electronico de contabilidad contabilidad@uniongr.com",
+                " en el siguiente link podras descargar y consultar la informacion relacionada a los certificados tributarios para ingresar debes tener el nit y la clave a continuacion te adjuntaremos el link<a href=\"http://wm.uniongr.co:8089/retenciones/\" target=\"parent\">retenciones</a>  y  si tienes dudas  o inquietudes escribe al correo electronico de contabilidad contabilidad@uniongr.com"
             ],
             "context": []
         },
         {
             "tag": "colaboradores",
             "patterns": [
-                "donde puedo consultar informacion de los colaboradores",
-                "donde puedo consultar la informacion como trabajador",
                 "colaboradores",
                 "trabajadores",
-                "informacion empleados",
-                "colaborador  "
+                "empleados"
             ],
             "responses": [
-                "la puedes consultar en el siguiente link",
-                "puedes consultar las siguientes inquietudes en el siguiente link",
-                "en el siguiente link te daremos una informacion mucho mas detallada"
+                "En el siguiente link <a href=\"https://www.uniongr.co/colaboradores/\" target=\"parent\">colaboradores</a> podras consultar informacion relacionada a el reglamento interno, plan de beneficios, universidad virtual, trabaje con nosotros, noticias para ti, adicional a lo anterior mencionado, tambien, encontraras informacion sobre workmanager, help desk empleados, consulta de aportes, descarga de portafolio o podras dejarnos un mensaje con tu nombre, correo para contactarnos contigo",
+                "En el siguiente link <a href=\"https://www.uniongr.co/colaboradores/\" target=\"parent\">colaboradores</a> podras consultar informacion relacionada a el reglamento interno, plan de beneficios, universidad virtual, trabaje con nosotros, noticias para ti, adicional a lo anterior mencionado, tambien, encontraras informacion sobre workmanager, help desk empleados, consulta de aportes, descarga de portafolio o podras dejarnos un mensaje con tu nombre, correo para contactarnos contigo"
             ],
             "context": []
         },
         {
-            "tag": "contactenos",
+            "tag": "etica",
             "patterns": [
-                "Adiós",
-                "Hasta luego",
-                "Adiós",
-                "Encantado de charlar contigo, adiós",
-                "Hasta la próxima"
+                "etica",
+                "e tica"
             ],
             "responses": [
-                "Hasta luego, gracias por visitarnos",
-                "Que tengas un buen día",
-                "¡Adiós! Vuelve pronto"
-            ],
-            "context": []
-        },
-        {
-            "tag": "contacto",
-            "patterns": [
-                "como puedo contactarlos",
-                "numero telefono",
-                "correo contacto",
-                "contacto",
-                "contactarlos",
-                "puedo dejar mi informacion para que me contacten",
-                "contacten"
-            ],
-            "responses": [
-                "nos puedes contactar en el siguiente link ",
-                "en el siguiente link donde puedes verificar la infomacion de contacto",
-                "en el siguiente link encontraras informacion sobre nuestra sede principal telefono y correo "
-            ],
-            "context": []
-        },
-        {
-            "tag": "correo_linea_etica",
-            "patterns": [
-                "cual es el correo de la linea etica",
-                "linea etica",
-                "correo linea etica",
-                "correo etica",
-                "correo linea   "
-            ],
-            "responses": [
-                "el correo de la linea etica es lineaetica@uniongr.com",
-                "el correo de la linea etica lo puedes visualizar como lineaetica@uniongr.com",
-                "linea etica maneja este correo lineaetica@uniongr.com"
-            ],
-            "context": []
-        },
-        {
-            "tag": "correo_notificaciones_judiciales",
-            "patterns": [
-                "donde puedo notificar judicialmente a union",
-                "donde enviar una notificacion judicial",
-                "correo para enviar una notificacion judicial",
-                "notificacion judicial",
-                "donde puedo hacer una notificacion judicial",
-                "judicial",
-                "notificacion               "
-            ],
-            "responses": [
-                "el correo de notificaciones judiciales es notificacionesjudiciales@uniongr.com",
-                "el correo donde puedes notificar a union es notificacionesjudiciales@uniongr.com",
-                "en el siguiente correo puedes hacer tus notificaciones judiciales notificacionesjudiciales@uniongr.com"
-            ],
-            "context": []
-        },
-        {
-            "tag": "correo_proteccion_de_datos",
-            "patterns": [
-                "donde puedo pedir informacion sobre la proteccion de datos",
-                "cual es el correo de proteccion de datos",
-                "proteccion de datos",
-                "correo proteccion de datos",
-                "informacion sobre proteccion datos",
-                "informacion proteccion datos"
-            ],
-            "responses": [
-                "el correo de proteccion de datos es protecciondedatos@uniongr.com",
-                "en el siguiente correo podras consultar informacion sobre proteccion de datos protecciondedatos@uniongr.com",
-                "el correo de proteccion de datos es el siguiente protecciondedatos@uniongr.com",
-                "correo proteccion de datos protecciondedatos@uniongr.com"
-            ],
-            "context": []
-        },
-        {
-            "tag": "correo_servicio_cliente",
-            "patterns": [
-                "dode puedo obtener el correo de servicio al cliente",
-                "cual es el correo de servicio al cliente",
-                "correo servicio al cliente",
-                "correo servicio cliente",
-                "servicio cliente"
-            ],
-            "responses": [
-                "el correo de servicio al cliente es servicioalcliente@uniongr.com",
-                "en el siguiente correo podras consultar informacion sobre servicio al cliente servicioalcliente@uniongr.com",
-                "el correo servicio al cliente es el siguiente servicioalcliente@uniongr.com",
-                "correo servicio al cliente servicioalcliente@uniongr.com"
-            ],
-            "context": []
-        },
-        {
-            "tag": "direccion_notificaciones_judiciales",
-            "patterns": [
-                "donde puedo notificar judicialmente a union",
-                "donde enviar una notificacion judicial",
-                "direccion para enviar una notificacion judicial",
-                "direccion notificacion judicial",
-                "donde puedo hacer una notificacion judicial",
-                "judicial",
-                "notificacion               ",
-                "direccion notificacion    ",
-                "direccion judicial"
-            ],
-            "responses": [
-                "direccion para notificaciones judiciales Calle 15 sur No. 48-39 medellin-colombia\t\t\t\t\t\t\t",
-                "en la siguiente direccion puede realizar las notificaciones judiciales Calle 15 sur No. 48-39 medellin-colombia\t\t\t\t\t\t\t",
-                "direccion para notificaciones judiciales Calle 15 sur No. 48-39 medellin-colombia\t\t\t\t\t\t\t"
-            ],
-            "context": []
-        },
-        {
-            "tag": "direccion_principal",
-            "patterns": [
-                "direccion principal",
-                "direccion union",
-                "direccion empresa union",
-                "union direccion",
-                "como llegar a union",
-                "donde queda la direccion principal de union",
-                "direccion grupo",
-                "direccionn grupo union"
-            ],
-            "responses": [
-                "la direccion principal del grupo union es calle 15 sur # 48 -39 medellin-colombia",
-                "la direccion principal del grupo union es la siguiente calle 15 sur # 48 -39 medellin-colombia",
-                "nuestra direccion principal es calle 15 sur # 48 -39 medellin-colombia"
+                "El correo de la linea etica es lineaetica@uniongr.com y el numero de la linea etica es 01 8000 413 665",
+                "El correo de la linea etica es lineaetica@uniongr.com y el numero de la linea etica es 01 8000 413 665"
             ],
             "context": []
         },
@@ -247,91 +97,32 @@
             "context": []
         },
         {
-            "tag": "habeas_data",
-            "patterns": [
-                "Adiós",
-                "Hasta luego",
-                "Adiós",
-                "Encantado de charlar contigo, adiós",
-                "Hasta la próxima"
-            ],
-            "responses": [
-                "Hasta luego, gracias por visitarnos",
-                "Que tengas un buen día",
-                "¡Adiós! Vuelve pronto"
-            ],
-            "context": []
-        },
-        {
             "tag": "helpdesk_empleados",
             "patterns": [
                 "soporte tecnico",
-                "como acceder al helpdesk",
-                "helpdesk",
-                "como solicitar un soporte tecnico",
-                "tickets",
+                "help desk",
                 "ticket",
                 "tiket",
-                "donde enviar un ticket",
-                "VPN",
-                "administrar fallas",
-                "fallas",
-                "reportes",
-                "como reportar"
+                "helpdesk"
             ],
             "responses": [
-                "en el siguiente link podras realizar tus consultas",
-                "puedes consultar las inquietudes en el siguiente link",
-                "en el siguiente link te daremos una informacion mucho mas detallada"
+                "Para iniciar sesion en el helpdesk empleados debes tener el nombre de usuario y contrasena y alli podras obtener informacion, realizar tickets, entre otras funciones, ingresando a este link <a href=\"http://wm.uniongr.co:8084/HelpDeskPro/Helpdesk/Operacion/SolicitudTickt.aspx\" target=\"parent\">Helpdesks</a>",
+                "Para iniciar sesion en el helpdesk empleados debes tener el nombre de usuario y contrasena y alli podras obtener informacion, realizar tickets, entre otras funciones, ingresando a este link <a href=\"http://wm.uniongr.co:8084/HelpDeskPro/Helpdesk/Operacion/SolicitudTickt.aspx\" target=\"parent\">Helpdesks</a>"
             ],
             "context": []
         },
         {
             "tag": "horario_atencion",
             "patterns": [
-                "cual es el horario atencion",
-                "horario de atencion",
-                "atencion a usuarios",
-                "horario de atencion al publico",
-                "horario atencion publico",
-                "horario publico",
-                "horario atencion general"
+                "horario atencion",
+                "direccion principal",
+                "ubicacion",
+                "hora "
             ],
             "responses": [
-                "el horario de atencion al publico es lunes a viernes 6:30am a 12.30m 1:00pm a 4:30 pm\t\t\t\t\t\t",
-                "el horario de atencion al publico es el siguiente lunes a viernes 6:30am a 12.30m 1:00pm a 4:30 pm\t\t\t\t\t\t",
-                "nuestro horario de atencion es lunes a viernes 6:30am a 12.30m 1:00pm a 4:30 pm\t\t\t\t\t\t"
-            ],
-            "context": []
-        },
-        {
-            "tag": "linea_etica",
-            "patterns": [
-                "telefono linea etica",
-                "como contactar la linea etica",
-                "linea etica telefono",
-                "donde puedo llamar a la linea etica"
-            ],
-            "responses": [
-                "el telefono de la linea etica es el siguiente 01 8000 413 665",
-                "nuestro telefono de linea etica es 01 8000 413 665",
-                "la linea etica tiene el siguiente numero de telefono 01 8000 413 665"
-            ],
-            "context": []
-        },
-        {
-            "tag": "linea_servicio_cliente",
-            "patterns": [
-                "telefono linea atencion al cliente",
-                "linea de telefono de atencion al cliente",
-                "atencion cliente telefono",
-                "donde puedo llamar a la linea atencion al cliente",
-                "atencion al cliente"
-            ],
-            "responses": [
-                "el telefono de la linea etica es el siguiente 01 8000 413 665",
-                "nuestro telefono de linea etica es 01 8000 413 665",
-                "la linea etica tiene el siguiente numero de telefono 01 8000 413 665"
+                "Nuestra sede principal esta ubicada en Medellin-Antioquia y nuestra direccion principal es Calle 15 sur No. 48-39 medellin-colombia",
+                "Nuestra sede principal esta ubicada en Medellin-Antioquia y nuestra direccion principal es Calle 15 sur No. 48-39 medellin-colombia",
+                "\t\t\t\t\t\t"
             ],
             "context": []
         },
@@ -344,197 +135,103 @@
             "context": []
         },
         {
-            "tag": "pbx",
+            "tag": "notificaciones_judiciales",
             "patterns": [
-                "pbx",
-                "cual es el pbx",
-                "numero del pbx"
+                "notificacion judicial",
+                "notificacion",
+                "judicial"
             ],
             "responses": [
-                "el telefono del pbx es 604 325 55 55",
-                "nuestro telefono de pbx 604 325 55 55",
-                "la linea pbx es 604 325 55 55"
+                "Nuestro correo es notificacionesjudiciales@uniongr.com y la direccion donde puede realizar las notificaciones judiciales es Calle 15 sur No. 48-39 medellin-colombia",
+                "Nuestro correo es notificacionesjudiciales@uniongr.com y la direccion donde puede realizar las notificaciones judiciales es Calle 15 sur No. 48-39 medellin-colombia"
             ],
             "context": []
         },
         {
             "tag": "plan_beneficios_colaboradores",
             "patterns": [
-                "beneficios colaboradores",
-                "plan de beneficios",
-                "beneficios   ",
-                "beneficios empleados",
-                "plan de beneficios empleados",
-                "cual es el plan de beneficios",
-                "donde encuentro el plan de beneficios",
-                "donde puedo ver los dias libres",
-                "donde ver plan de beneficio",
-                "donde ver plan de beneficios",
-                "beneficio"
+                "beneficios",
+                "plan de beneficios"
             ],
             "responses": [
-                "el plan de beneficios lo puedes visualizar en el siguiente enlace ",
-                "el plan de beneficios lo puedes visualizar en el siguiente link",
-                "en el siguiente link puedes visualizar el plan de beneficios"
+                "En el plan de beneficios podras acceder a informacion sobre planes asistenciales, recreativos y de bienestar, complementarios cada uno de estos conjuntos tiene sub-conjuntos te invitamos a que consultes nuestro plan de beneficios en formato PDF, a continiacion te adjuntamos el link donde podras visualizar nuestro plan de beneficios <a href=\"https://www.uniongr.co/wp-content/uploads/2022/06/PLAN-BENEFICIOS-correccio%CC%81n.pdf\" target=\"parent\">PLAN-BENEFICIOS</a>",
+                "En el plan de beneficios podras acceder a informacion sobre planes asistenciales, recreativos y de bienestar, complementarios cada uno de estos conjuntos tiene sub-conjuntos te invitamos a que consultes nuestro plan de beneficios en formato PDF, a continiacion te adjuntamos el link donde podras visualizar nuestro plan de beneficios <a href=\"https://www.uniongr.co/wp-content/uploads/2022/06/PLAN-BENEFICIOS-correccio%CC%81n.pdf\" target=\"parent\">PLAN-BENEFICIOS</a>"
             ],
             "context": []
         },
         {
             "tag": "politica_tratamiento_datos",
             "patterns": [
-                "politicas proteccion de datos",
                 "tratamiento de datos",
-                "politica tratamiento de datos",
-                "politica datos",
-                "politica tratamiento datos personales",
-                "politica datos personales",
-                "polititca tratamiento",
-                "tratamiento de datos politica",
-                "politicas de datos"
+                "datos",
+                "proteccion dato",
+                "dato "
             ],
             "responses": [
-                "en el siguiente link podras consultar el pdf ",
-                "puedes consultar las inquietudes en el siguiente link",
-                "en el siguiente link te daremos una informacion mucho mas detallada"
+                "la politica de tratamiento de datos la podras consultar en nuestra pagina web <a href=\"https://www.uniongr.co/wp-content/uploads/2022/01/POLITICA-TRATAMIENTO-UESA-V-FINAL.pdf\" target=\"parent\">POLITICA-TRATAMIENTO</a>  en formato pdf o al correo protecciondedatos@uniongr.com",
+                "la politica de tratamiento de datos la podras consultar en nuestra pagina web <a href=\"https://www.uniongr.co/wp-content/uploads/2022/01/POLITICA-TRATAMIENTO-UESA-V-FINAL.pdf\" target=\"parent\">POLITICA-TRATAMIENTO</a>  en formato pdf o al correo protecciondedatos@uniongr.com"
             ],
             "context": []
         },
         {
             "tag": "portafolio",
             "patterns": [
-                "cual es su portafolio de prodcutos",
-                "cuentan con portafilio de productos",
-                "donde puedo visualizar el portafolio de productos",
-                "portafolio de productos",
-                "portafolio   ",
-                "donde ver el portaflio de productos",
-                "donde ver sus productos",
-                "producto",
-                "portafolio de producto"
+                "productos",
+                "portafolio productos"
             ],
             "responses": [
-                "puedes saber mas sobre nuestro portafolio en el siguiente link",
-                "puedes consultar las inquietudes sobre nuestro portafolio en el siguiente link",
-                "en el siguiente link te daremos una informacion mucho mas detallada sobre nuestro portafolio"
+                "Nuestro portafolio productos lo podras consultar en el siguiente link <a href=\"https://www.uniongr.co/wp-content/uploads/2022/05/PresentacionGU2021-baja-comprimido.pdf\" target=\"parent\">Presentacion</a> donde encontraras nuestras sedes, ventas, estructura, productos de energia, productos de tecnologian y telecomunicaciones, beneficios, clientes, no pierdas ni un instante, conocenos.",
+                "Nuestro portafolio productos lo podras consultar en el siguiente link <a href=\"https://www.uniongr.co/wp-content/uploads/2022/05/PresentacionGU2021-baja-comprimido.pdf\" target=\"parent\">Presentacion</a> donde encontraras nuestras sedes, ventas, estructura, productos de energia, productos de tecnologian y telecomunicaciones, beneficios, clientes, no pierdas ni un instante, conocenos."
             ],
             "context": []
         },
         {
             "tag": "proveedores",
             "patterns": [
+                "externa",
                 "proveedores",
-                "politicas externas",
-                "consulta proveedores",
-                "bienes y servicios",
-                "suministros"
+                "provedores"
             ],
             "responses": [
-                "en el siguiente link puedes consultar la informacion de proveedores",
-                "en el siguiente link puedes consultar la informacion de proveedores",
-                "en el siguiente link puedes consultar la informacion de proveedores"
+                "En nuestra pagina web <a href=\"https://www.uniongr.co/proveedores/\" target=\"parent\">proveedores</a> en la seccion proveedores podras conocer informacion sobre quienes son nuestos proveedores y las politicas externas.",
+                "En nuestra pagina web <a href=\"https://www.uniongr.co/proveedores/\" target=\"parent\">proveedores</a> en la seccion proveedores podras conocer informacion sobre quienes son nuestos proveedores y las politicas externas."
             ],
             "context": []
         },
         {
             "tag": "proyectos",
             "patterns": [
-                "proyectos de energia",
-                "donde puedo consultar los proyectos de energia",
-                "proyecto de telecomunicaciones",
-                "donde puedo consultar los proyectos de telecomunicaciones",
-                "telecomunicaciones",
-                "energia",
-                "proyecto de energia de union",
-                "cuales son los proyectos de energia de union",
-                "cuales son los proyectos de energia de telecomunicaciones",
-                "cuales proyectos de energia tienen ustedes",
-                "cuales proyectos de telecomunicaciones tienen ustedes"
+                " proyectos de energia y telecomunicaciones",
+                "energia y teleco"
             ],
             "responses": [
-                "En este link puedes obtener la informacion necesaria a tu pregunta",
-                "en el siguiente link podras conocer mas sobres los proyectos de energia y telecomunicaciones con los que cuenta union",
-                "En este link puedes obtener la informacion necesaria a tu pregunta sobre nuestros proyectos"
+                "Actualmente en grupo union hemos realizado proyectos de energia, tencologia y telecomunicaciones donde destacan el centro de comando y control, reconocimiento facial, subestacion de ayacucho, entre otros, podras conocer muchas mas sobre todos nuestros proyectos en nuestra pagian web <a href=\"https://www.uniongr.co/proveedores/\" target=\"parent\">nuestros-proyectos</a> seccion proyectos.",
+                "Actualmente en grupo union hemos realizado proyectos de energia, tencologia y telecomunicaciones donde destacan el centro de comando y control, reconocimiento facial, subestacion de ayacucho, entre otros, podras conocer muchas mas sobre todos nuestros proyectos en nuestra pagian web <a href=\"https://www.uniongr.co/proveedores/\" target=\"parent\">nuestros-proyectos</a> seccion proyectos."
             ],
             "context": []
         },
         {
             "tag": "redes_sociales",
             "patterns": [
-                "cuales redes sociales tiene el grupo union",
                 "redes sociales",
-                "union tiene redes sociales",
-                "informacion sobre las redes sociales de union",
-                "union cuenta con redes sociales",
-                "cuales son las redes sociales de union",
-                "donde puede ver las redes sociales de union"
+                "redes sociale "
             ],
             "responses": [
-                "actualmente nos puedes encontrar en nuestras redes sociales como grupo union facebook-youtube y linkedin",
-                "nos encuentras como grupo union en facebook-youtube y linkedin",
-                "el grupo union no puedes encontrar como en facebook - youtube y linkedin como grupo union"
+                "Actualmente aparecemos como Grupo Union en Facebook",
+                "Actualmente aparecemos como Grupo Union en Facebook"
             ],
             "context": []
         },
         {
-            "tag": "redes_sociales_fb",
+            "tag": "reglamento_interno",
             "patterns": [
-                "union tiene facebook",
-                "cual es el facebool de union",
-                "como puedo encontrarlos en facebook",
-                "fb",
-                "facebook"
+                "etica y buenas practicas",
+                "higiene y seguridad industrial",
+                "interno de trabajo"
             ],
             "responses": [
-                "nos encuentras en facebook como grupo union",
-                "nos puedes visualizar eb facebook como grupo union",
-                "en facebook aparecemos como grupo union"
-            ],
-            "context": []
-        },
-        {
-            "tag": "redes_sociales_youtube",
-            "patterns": [
-                "union cuenta con youtube",
-                "como los encuentro en youtube",
-                "youtube"
-            ],
-            "responses": [
-                "nos encuentras en youtube como grupo union",
-                "en youtube nos encuentras como grupo union",
-                "en youtube nos puedes buscar como grupo union"
-            ],
-            "context": []
-        },
-        {
-            "tag": "reglamento_interno_colaboradores",
-            "patterns": [
-                "donde puedo visulizar las normas y politicas institucionales",
-                "donde puedo ver el reglamento interno ",
-                "reglamento interno",
-                "politicas institucionales",
-                "codigo etica y buenas practicas",
-                "reglamento de higiene y seguridad industrial",
-                "reglamento interno de trabajo",
-                "puedo visualizar el reglamento institucional"
-            ],
-            "responses": [
-                "el reglamento lo puedes visualizar en el siguiente link como pdf",
-                "el pdf del reglamento lo puede ver en el siguiente link",
-                "en el siguiente link puede visualizar tu pregunta en formato pdf"
-            ],
-            "context": []
-        },
-        {
-            "tag": "resdes_sociales_linkedin",
-            "patterns": [
-                "grupo union tiene linkedin",
-                "linkedin",
-                "union aparece en linkedin"
-            ],
-            "responses": [
-                "en linkedin aparecemos como grupo union",
-                "puedes encontrarnos en linkedin como grupo union",
-                "en linkedin aparecemos como grupo union"
+                "El reglamento interno lo podras visualizar en formato PDF ingresando al siguiente link <a href=\"https://www.uniongr.co/wp-content/uploads/2021/12/NORMAS-Y-POLITICAS-INSTITUCIONALES.pdf\" target=\"parent\">NORMAS-Y-POLITICAS-INSTITUCIONALES</a>",
+                "El reglamento interno lo podras visualizar en formato PDF ingresando al siguiente link <a href=\"https://www.uniongr.co/wp-content/uploads/2021/12/NORMAS-Y-POLITICAS-INSTITUCIONALES.pdf\" target=\"parent\">NORMAS-Y-POLITICAS-INSTITUCIONALES</a>"
             ],
             "context": []
         },
@@ -558,15 +255,11 @@
         {
             "tag": "sedes_union",
             "patterns": [
-                "cuales sedes tienen union",
-                "union donde tiene ubicadas las sedes",
-                "union tiene otras sedes",
-                "cuales son las otras sedes",
-                "sedes union",
-                "sedes "
+                "sedes",
+                "oficinas",
+                "sede "
             ],
             "responses": [
-                "actualmente en union contamos con varias sedes las cuales serian las siguientes: estados unidos-miami / honduras-san pedro lula / panama-ciudad de panama/ ecuador-quito-guayaquil / peru-lima / colombia-medellin sede principal- bogota",
                 "actualmente en union contamos con varias sedes las cuales serian las siguientes: estados unidos-miami / honduras-san pedro lula / panama-ciudad de panama/ ecuador-quito-guayaquil / peru-lima / colombia-medellin sede principal- bogota",
                 "actualmente en union contamos con varias sedes las cuales serian las siguientes: estados unidos-miami / honduras-san pedro lula / panama-ciudad de panama/ ecuador-quito-guayaquil / peru-lima / colombia-medellin sede principal- bogota"
             ],
@@ -575,134 +268,90 @@
         {
             "tag": "servicios_energia",
             "patterns": [
-                "que hace union con servicios de energia",
-                "energia",
-                "transmision",
-                "distribucion",
-                "industrial",
-                "fibra optica",
-                "servicios de energia",
-                "cuales servicios de energia tiene union",
                 "servicio energia",
-                "cuales servicios de energia tienen ",
-                "cuales servicios de transmision",
-                "cuales servicios de distribuccion",
-                "servicios de fibra optica",
-                "servicios energia industrial"
+                "servicios energia "
             ],
             "responses": [
-                "en el siguiente link te ampliaremos la informacion sobre los servicios de energia",
-                "los servicios de energia los podras encontrar en el siguiente link",
-                "puedes visualizar nuestros servicios de energia en el siguiente link"
+                "<p>Nuestros servicios de energia son transmision, distribuccion, industrial,</p><p>fibra optica y nuevos negocios, podras obtener mas informacion</p><p>sobre nuestros servicios de energia ingresando</p><p>al siguiente link <a href=\"https://www.uniongr.co/energia-4/\" target=\"parent\">ENERGIA</a></p>",
+                "<p>Nuestros servicios de energia son transmision, distribuccion, industrial,</p><p>fibra optica y nuevos negocios, podras obtener mas informacion</p><p>sobre nuestros servicios de energia ingresando</p><p>al siguiente link <a href=\"https://www.uniongr.co/energia-4/\" target=\"parent\">ENERGIA</a></p>"
             ],
             "context": []
         },
         {
             "tag": "servicios_tecnologia_telecomunicaciones",
             "patterns": [
-                "cuales servicios de tecnologia y telecomunicaciones actualmente tienen",
-                "telecomunicaciones",
-                "automatizacion",
-                "seguridad electronica",
-                "servicios tecnologia",
-                "servicios de telecomunicaciones",
-                "telecomunicacion ",
-                "electronica"
+                "servicios de tecnologia y telecomunicaciones ",
+                "tecnolo y teleco"
             ],
             "responses": [
-                "en el siguiente link te ampliaremos la informacion sobre nuestros servicios de tecnologia y telecomunicaciones",
-                "este link podras ampliar tu informacion sobre nuestros servicios de tecnologia y telecomunicaciones",
-                "en el siguiente link conoceras nuestros servicios de tecnologia y telecomunicaciones"
+                "Nuestros servicios de tecnologia y telecomunicaciones son los siguientes telecomunicaciones, automatizacion, seguridad electronicas. En el siguiente link podras conocer mucho mas sobres nuestros proyectos de tecmologia y telecomunicaciones <a href=\"https://www.uniongr.co/energia-4/\" target=\"parent\">tecnologia-y-telecomunicaciones</a>",
+                "Nuestros servicios de tecnologia y telecomunicaciones son los siguientes telecomunicaciones, automatizacion, seguridad electronicas. En el siguiente link podras conocer mucho mas sobres nuestros proyectos de tecmologia y telecomunicaciones <a href=\"https://www.uniongr.co/energia-4/\" target=\"parent\">tecnologia-y-telecomunicaciones</a>"
+            ],
+            "context": []
+        },
+        {
+            "tag": "servicio_cliente",
+            "patterns": [
+                "atencion al cliente",
+                "cliente",
+                "contactenos"
+            ],
+            "responses": [
+                "Nos puedes contactar en nuestro PBX es 604 325 55 55",
+                "Nos puedes contactar en nuestro PBX es 604 325 55 55"
             ],
             "context": []
         },
         {
             "tag": "trabaja_con_nosotros",
             "patterns": [
-                "como inscribir mi hoja de vida en su banco de hojas de vida",
-                "banco hojas de vida",
-                "hoja de vida",
-                "como anexar mi hoja de vida",
-                "insertar hoja de vida",
-                "como trabajar para ustedes",
-                "requisitos para trabajar con ustedes",
-                "ofertas laborales ",
-                "ofertas laborales disponibles",
-                "ofertas trabajo    ",
-                "trabajo con ustedes"
+                "empleo",
+                "trabaja con nosotros",
+                "hoja de vida"
             ],
             "responses": [
-                "en el siguiente link ampliaremos la informacion a tus preguntas",
-                "en este link veras nuestras ofertas laborales y podras anexar tu hoja de vida en nuestro banco de hojas de vida",
-                "en el siguiente link podras consultar la informacion solicitada"
+                "En nuestra pagina web <a href=\"https://www.elempleo.com/co/base-empresarial/grupo-union/4888\" target=\"parent\">trabaja-nosotros</a> podras conocer informacion sobre nuestras ofertas laborales, nuestra banco de hojas de vida, la mision, vision y el porque hacer parte de grupo union",
+                "En nuestra pagina web <a href=\"https://www.elempleo.com/co/base-empresarial/grupo-union/4888\" target=\"parent\">trabaja-nosotros</a> podras conocer informacion sobre nuestras ofertas laborales, nuestra banco de hojas de vida, la mision, vision y el porque hacer parte de grupo union"
             ],
             "context": []
         },
         {
             "tag": "transparencia_y_etica_empresarial",
             "patterns": [
-                "programa transparencia y etica empresarial",
-                "politica antisoborno y anticorrupcion",
-                "antisoborno",
-                "anticorrupcion",
-                "politica antocorrupcion",
-                "politica transparencia",
-                "cual es la politica transparencia",
-                "cual es la politica antisoborno y anticorrupcion",
-                "politica anticorrupcion",
+                "transparencia y etica empresarial",
+                "antisoborno y anticorrupcion",
                 "transparencia y etica empresarial"
             ],
             "responses": [
-                "en el siguiente link podras mirar nuestra politica transparencia en formato pdf",
-                "en el siguiente link podras visualizar nuestra politica en formato pdf",
-                "en el link que adjuntaremos podras visualizar nuestra politica en formato pdf"
+                "En el siguiente link <a href=\"https://www.uniongr.co/wp-content/uploads/2022/01/PROGRAMA-DE-TRANSPARENCIA-GU-V4-13-07-2021-REV-1.pdf\" target=\"parent\">PROGRAMA-DE-TRANSPARENCIA> podras mirar nuestra politica transparencia y etica empresarial en formato pdf, nuestra politica de anticorrupcion y anti-soborno en colombia y en el exterior.",
+                "En el siguiente link <a href=\"https://www.uniongr.co/wp-content/uploads/2022/01/PROGRAMA-DE-TRANSPARENCIA-GU-V4-13-07-2021-REV-1.pdf\" target=\"parent\">PROGRAMA-DE-TRANSPARENCIA> podras mirar nuestra politica transparencia y etica empresarial en formato pdf, nuestra politica de anticorrupcion y anti-soborno en colombia y en el exterior."
             ],
-            "context": []
-        },
-        {
-            "tag": "t_e.csv",
-            "patterns": [],
-            "responses": [],
             "context": []
         },
         {
             "tag": "u_virtual_colaboradores",
             "patterns": [
-                "puedo realizar un curso gratuito",
-                "cursos ",
-                "capacitacion personal",
-                "donde puedo ver la capacitacion del personal",
                 "cursos disponibles",
-                "puedo hacer cursos siendo trabajador",
-                "que cursos disponibles hay",
-                "que cursos disponibles ahi",
-                "que cursos disponibles ay",
-                "como colaborador puedo hacer cursos"
+                "cursos gratis",
+                "capacitaciones"
             ],
             "responses": [
-                "en el siguiente link podras visualizar la u virtual del grupo union",
-                "el grupo union cuenta con la siguiente u virtual se le adjuntara el siguiente link",
-                "en el siguiente link podras ampliar tu informacion"
+                "En nuestra pagina web <a href=\"http://3.94.196.80/virtualGU/login/index.php\" target=\"parent\">virtualGU</a> podras acceder a los cursos gratuitos que actualmente ofrece grupo union, a capacitaciones, entre otras cosas. Puedes ingresar como usuario invitado o si eres empleado de grupo union ingresar con tu usuario y contrasena.",
+                "En nuestra pagina web <a href=\"http://3.94.196.80/virtualGU/login/index.php\" target=\"parent\">virtualGU</a> podras acceder a los cursos gratuitos que actualmente ofrece grupo union, a capacitaciones, entre otras cosas. Puedes ingresar como usuario invitado o si eres empleado de grupo union ingresar con tu usuario y contrasena."
             ],
             "context": []
         },
         {
             "tag": "workmanager",
             "patterns": [
-                "tienen gestion documental",
-                "cuentan con gestion documental",
+                "documentos",
+                "workmanager",
                 "gestion documental",
-                "flujo de trabajo ",
-                "procesos",
-                "como ingreso al workmanager",
-                "donde puedo encontrar el workmanager",
-                "work manager",
-                "tienen un organizado el trabajo de forma sencilla y mas agil"
+                "procesos"
             ],
             "responses": [
-                "en el siguiente link podras consultar la informacion solicitada",
-                "en el siguiente link ampliaras la informacion",
-                "te proporcionaremos un link donde podras consultar tu informacion mas detallada"
+                "Sobre nuestros procesos, gestion documental y  registros los podras consultar en el siguiente enlace con tu nombre de usuario y contrasena <a href=\"http://wm.uniongr.co/Account/Login\" target=\"parent\">workmanager</a>",
+                "Sobre nuestros procesos, gestion documental y  registros los podras consultar en el siguiente enlace con tu nombre de usuario y contrasena <a href=\"http://wm.uniongr.co/Account/Login\" target=\"parent\">workmanager</a>"
             ],
             "context": []
         }
