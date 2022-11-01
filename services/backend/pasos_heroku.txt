@@ -1,0 +1,10 @@
+heroku login
+heroku container:login
+heroku create wisrovichatbotbackend
+
+heroku container:push web -a wisrovichatbotbackend
+
+heroku container:release web -a wisrovichatbotbackend
+
+https://wisrovichatbotbackend.herokuapp.com/
+https://wisrovichatbotbackend.herokuapp.com/version

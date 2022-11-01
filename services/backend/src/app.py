@@ -1,9 +1,9 @@
-import json
+
+
 import uvicorn
 from fastapi import FastAPI, Request
-from fastapi_redis_cache import cache
 from pydantic import BaseModel
-from connec_redis import FastApiRedisCache, os, LOCAL_REDIS_URL
+import os
 import time
 
 
@@ -31,19 +31,6 @@ res = inizia("hello", charge=True)
 
 print("model charged")
 
-
-# 1.2 Connect to Redis 
-@app.on_event("startup")
-def startup():
-    print("Connecting to Redis...")
-    print("Redis url: ", LOCAL_REDIS_URL)
-    redis_cache = FastApiRedisCache()
-    redis_cache.init(
-        host_url=os.environ.get("REDIS_URL", LOCAL_REDIS_URL),
-        prefix="myapi-cache",
-        response_header="X-MyAPI-Cache",
-        ignore_arg_types=[Request, Response]
-    )
 
 
 # 2. Define data type
@@ -154,7 +141,7 @@ async def train():
 
 if __name__ == "__main__":
     print("Starting server...")
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=80)
 
 
 # 4. Start the API application (on command line)

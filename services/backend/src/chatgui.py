@@ -17,7 +17,7 @@ def leer_data():
     global classes, words, intents, model
 
     model = load_model('/model/chatbot_model.h5')
-    intents = json.loads(open('/data_train/intents.json').read())
+    intents = json.loads(open('/model/data_train/intents.json').read())
     words = pickle.load(open('/model/words.pkl','rb'))
     classes = pickle.load(open('/model/classes.pkl','rb'))
 
