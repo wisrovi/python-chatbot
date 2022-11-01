@@ -3,8 +3,8 @@ services:
   backend:
     build: .
     volumes:
-      - ./src/model:/model
-      - ./src/model/data_train:/model/data_train
+      - ./src/model:/code/model
+      - ./src/model/data_train:/code/model/data_train
       - ./src:/code
     environment:
       - SO=docker

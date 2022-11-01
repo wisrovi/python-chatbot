@@ -16,10 +16,10 @@ classes = words = intents = model = None
 def leer_data():
     global classes, words, intents, model
 
-    model = load_model('/model/chatbot_model.h5')
-    intents = json.loads(open('/model/data_train/intents.json').read())
-    words = pickle.load(open('/model/words.pkl','rb'))
-    classes = pickle.load(open('/model/classes.pkl','rb'))
+    model = load_model('/code/model/chatbot_model.h5')
+    intents = json.loads(open('/code/model/data_train/intents.json').read())
+    words = pickle.load(open('/code/model/words.pkl','rb'))
+    classes = pickle.load(open('/code/model/classes.pkl','rb'))
 
 # preprocessamento input utente
 def clean_up_sentence(sentence):
